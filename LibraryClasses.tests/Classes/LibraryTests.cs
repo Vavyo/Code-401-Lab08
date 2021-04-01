@@ -37,10 +37,11 @@ namespace LibraryClasses.tests.Classes
 
             // act
             Book borrowed = library.Borrow("Moby Dick");
+            int count = library.Count;
 
             // assert
             Assert.DoesNotContain(borrowed, library);
-            Assert.Single(library);
+            Assert.Equal(1,count);
 
         }
     }
