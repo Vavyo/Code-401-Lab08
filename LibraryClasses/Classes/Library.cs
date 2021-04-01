@@ -24,6 +24,7 @@ namespace LibraryClasses.Classes
             Book book;
             dictionary.TryGetValue(title, out book);
             dictionary.Remove(title);
+            Count--;
             return book;
         }
 
