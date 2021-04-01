@@ -58,5 +58,22 @@ namespace LibraryClasses.tests.Classes
             Assert.Null(book);
             Assert.Equal(0, count);
         }
+        [Fact]
+        public void Return_adds_book_to_library()
+        {
+            // arrange
+            Library books = new Library();
+            books.Add("Moby Dick", "Herman", "Melville", 378);
+            books.Add("just test title", "boring", "right?", 378);
+            Book book = books.Borrow("Moby Dick");
+
+            // act
+            books.Return(book);
+
+            // assert
+            int count = books.Count;
+            Assert.Contains(book, books);
+            Assert.Equal(2, count);
+        }
     }
 }
