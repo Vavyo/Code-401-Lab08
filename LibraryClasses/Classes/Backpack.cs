@@ -25,7 +25,9 @@ namespace LibraryClasses.Classes
 
         public T Unpack(int index)
         {
-            throw new NotImplementedException();
+            T item = contents[index];
+            contents.RemoveAt(index);
+            return item;
         }
 
         IEnumerator IEnumerable.GetEnumerator()
