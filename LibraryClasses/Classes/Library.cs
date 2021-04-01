@@ -9,7 +9,7 @@ namespace LibraryClasses.Classes
 {
     public class Library : ILibrary
     {
-        private Dictionary<string, Book> dictionary { get; set; }
+        private Dictionary<string, Book> dictionary = new Dictionary<string, Book>();
         public int Count { get; private set; }
 
         public void Add(string title, string firstName, string lastName, int numberOfPages)

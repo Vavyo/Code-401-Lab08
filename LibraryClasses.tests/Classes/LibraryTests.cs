@@ -18,8 +18,14 @@ namespace LibraryClasses.tests.Classes
 
             // act
             library.Add("Moby Dick", "Herman", "Melville", 378);
+            int count = library.Count;
             // assert
-            Assert.Contains<Book>()
+            Assert.Equal(1, count);
+            // act
+            library.Add("just test title", "boring", "right?", 378);
+            count = library.Count;
+            // assert
+            Assert.Equal(2, count);
         }
     }
 }
