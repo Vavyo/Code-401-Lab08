@@ -44,5 +44,18 @@ namespace LibraryClasses.tests.Classes
             Assert.Equal(1,count);
 
         }
+        [Fact]
+        public void Borrowing_nonexistant_book_returns_null()
+        {
+            // arrange
+            Library library = new Library();
+
+            // act
+            Book book = library.Borrow("Moby Dick");
+
+            // assert
+            Assert.Null(book);
+            
+        }
     }
 }
