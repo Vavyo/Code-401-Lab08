@@ -41,7 +41,8 @@ namespace LibraryClasses.Classes
 
         public void Return(Book book)
         {
-            throw new NotImplementedException();
+            dictionary.Add(book.Title, book);
+            Count++;
         }
 
         IEnumerator IEnumerable.GetEnumerator()
