@@ -21,7 +21,10 @@ namespace LibraryClasses.Classes
 
         public Book Borrow(string title)
         {
-            throw new NotImplementedException();
+            Book book;
+            dictionary.TryGetValue(title, out book);
+            dictionary.Remove(title);
+            return book;
         }
 
         public IEnumerator<Book> GetEnumerator()
