@@ -12,12 +12,15 @@ namespace LibraryClasses.Classes
         private List<T> contents = new List<T>();
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            foreach (T item in contents)
+            {
+                yield return item;
+            }
         }
 
         public void Pack(T item)
         {
-            throw new NotImplementedException();
+            contents.Add(item);
         }
 
         public T Unpack(int index)
