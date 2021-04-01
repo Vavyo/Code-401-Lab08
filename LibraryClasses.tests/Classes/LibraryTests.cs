@@ -54,8 +54,9 @@ namespace LibraryClasses.tests.Classes
             Book book = library.Borrow("Moby Dick");
 
             // assert
+            int count = library.Count;
             Assert.Null(book);
-            
+            Assert.Equal(0, count);
         }
     }
 }

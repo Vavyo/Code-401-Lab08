@@ -22,9 +22,12 @@ namespace LibraryClasses.Classes
         public Book Borrow(string title)
         {
             Book book;
-            dictionary.TryGetValue(title, out book);
-            dictionary.Remove(title);
-            Count--;
+            bool containsBook = dictionary.TryGetValue(title, out book);
+            if (containsBook)
+            {
+                dictionary.Remove(title);
+                Count--;
+            }
             return book;
         }
 
