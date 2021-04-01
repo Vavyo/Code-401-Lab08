@@ -18,5 +18,16 @@ namespace LibraryClasses.tests.Classes
             //assert
             Assert.NotNull(book);
         }
+        [Fact]
+        public void Author_is_firstname_and_lastname()
+        {
+            //arrange
+            Book book = new Book("Moby Dick", "Herman", "Melville", 378);
+            // act
+            string result = book.Author;
+            //assert
+            Assert.Equal("Herman Melville", result);
+        }
+
     }
 }
