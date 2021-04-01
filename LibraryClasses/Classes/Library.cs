@@ -10,11 +10,13 @@ namespace LibraryClasses.Classes
     public class Library : ILibrary
     {
         private Dictionary<string, Book> dictionary { get; set; }
-        public int Count => throw new NotImplementedException();
+        public int Count { get; private set; }
 
         public void Add(string title, string firstName, string lastName, int numberOfPages)
         {
-            throw new NotImplementedException();
+            Book newBook = new Book(title, firstName, lastName, numberOfPages);
+            dictionary.Add(title, newBook);
+            Count++;
         }
 
         public Book Borrow(string title)
@@ -24,7 +26,10 @@ namespace LibraryClasses.Classes
 
         public IEnumerator<Book> GetEnumerator()
         {
-            throw new NotImplementedException();
+            foreach (Book book in dictionary.Values)
+            {
+                yield return book;
+            };
         }
 
         public void Return(Book book)
@@ -34,7 +39,7 @@ namespace LibraryClasses.Classes
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
         }
     }
 }
